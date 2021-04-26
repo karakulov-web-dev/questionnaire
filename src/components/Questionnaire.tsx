@@ -14,7 +14,7 @@ interface IQuestionnaireProps {
   addAnswer: Function
 }
 
-const Questionnaire = (
+export const Questionnaire = (
   {
     questions,
     answers,
@@ -30,7 +30,7 @@ const Questionnaire = (
   useEffect(() => { setSelectedAnswers([]); }, [question]);
 
   if (isLoading) {
-    return <CircularProgress size={100} />;
+    return <CircularProgress data-testid="loading" size={100} />;
   }
 
   if (questions.length === answers.length) {
